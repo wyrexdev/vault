@@ -1,5 +1,6 @@
 #include "Entities/Entity.hpp"
-#include "Entities/Image.hpp"
+#include "Services/Application/ApplicationService.hpp"
+#include "Entities/Taskbar/Application.hpp"
 
 #include <gtk-layer-shell/gtk-layer-shell.h>
 

@@ -1,5 +1,4 @@
 #include "Taskbar/Taskbar.hpp"
-#include <memory>
 
 void Taskbar::onDraw()
 {
@@ -19,12 +18,9 @@ void Taskbar::onDraw()
         GTK_STYLE_PROVIDER(provider),
         GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-    auto logo = std::make_unique<Image>();
-    logo->loadImage("images/logo.png");
-
-    logo->getScale().y = 50;
-    logo->getScale().x = 50;
-
-    logo->setParent(main_box);
-    logo->onDraw();
+    for(WindowInfo application : ApplicationService::getOpenWindows()) {
+        Application *app = new Application(main_box);
+        app->setImage(application.iconPath);
+        app->onDraw();
+    }
 }

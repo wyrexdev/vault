@@ -1,4 +1,4 @@
-#include "Entities/Image.hpp"
+#include "Entities/Vault/Image.hpp"
 #include <gtk/gtk.h>
 
 void Image::onDraw()

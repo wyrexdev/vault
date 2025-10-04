@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     Taskbar *taskbar = new Taskbar();
     taskbar->loadStyle("style/Taskbar/index.css");
     taskbar->getScale().x = screen->getWidth() - (screen->getWidth() / 3);
-    taskbar->getScale().y = 70;
+    taskbar->getScale().y = 65;
     taskbar->draw();
 
     gtk_main();
