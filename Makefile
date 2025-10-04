@@ -5,6 +5,7 @@ TARGET = out/Vault
 SRC_DIR = src
 INC_DIR = include
 STYLE_DIR = style
+IMAGES_DIR = images
 
 SOURCES := $(shell find $(SRC_DIR) -type f -name "*.cpp")
 
@@ -42,13 +43,16 @@ LIBS = \
 CFLAGS = -Wall -Wextra -O2 $(INCLUDES)
 
 CSS_FILES := $(shell find $(STYLE_DIR) -type f -name "*.css")
+IMAGE_FILES := $(shell find $(IMAGES_DIR) -type f -name "*.png")
 
-$(TARGET): $(SOURCES) $(CSS_FILES)
+$(TARGET): $(SOURCES) $(CSS_FILES) $(IMAGE_FILES)
 	@mkdir -p out/style
+	@mkdir -p out/images
 	@cp -r $(STYLE_DIR)/* out/style/
+	@cp -r $(IMAGES_DIR)/* out/images/
 	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET) $(LIB_DIRS) $(LIBS)
 
 clean:
-	rm -rf $(TARGET) out/style
+	rm -rf $(TARGET) out/style out/images
 
 .PHONY: clean

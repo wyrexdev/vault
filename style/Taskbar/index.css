@@ -4,7 +4,7 @@ window {
     background-color: rgba(54, 49, 49, 0.59);
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    border-right: 1px solid rgb(130, 130, 130);
-    border-left: 1px solid rgb(130, 130, 130);
-    border-top: 1px solid rgb(130, 130, 130);
+    border-right: 1px solid rgb(128, 128, 128);
+    border-left: 1px solid rgb(128, 128, 128);
+    border-top: 1px solid rgb(128, 128, 128);
 }
